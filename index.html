@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Selamat Datang di 3iNetworks</title>
+  <title>3iNetworks | CashTobe Unity</title>
 
   <style>
     body {
@@ -25,7 +25,7 @@
     }
 
     header h1 {
-      font-size: 36px;
+      font-size: 34px;
       color: #d4af37;
       margin-bottom: 10px;
     }
@@ -36,16 +36,16 @@
     }
 
     .section {
-      background: rgba(255,255,255,0.05);
-      border-radius: 12px;
-      padding: 30px;
-      margin-bottom: 25px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 14px;
+      padding: 28px;
+      margin-bottom: 26px;
       border: 1px solid rgba(212,175,55,0.25);
     }
 
     .section h2 {
       color: #d4af37;
-      margin-bottom: 15px;
+      margin-bottom: 14px;
       font-size: 22px;
     }
 
@@ -54,19 +54,35 @@
       line-height: 1.8;
     }
 
-    a.button {
+    a {
+      color: #f5e08e;
+    }
+
+    .button {
       display: inline-block;
-      margin-top: 15px;
-      padding: 12px 24px;
+      margin-top: 12px;
+      padding: 12px 26px;
       background: linear-gradient(90deg, #d4af37, #f5e08e);
       color: #06241b;
       text-decoration: none;
       font-weight: bold;
       border-radius: 30px;
+      border: none;
     }
 
-    a.button:hover {
-      opacity: 0.9;
+    .button.white {
+      background: #ffffff;
+      color: #06241b;
+    }
+
+    input {
+      padding: 12px;
+      width: 80%;
+      max-width: 320px;
+      border-radius: 8px;
+      border: none;
+      margin-bottom: 12px;
+      text-align: center;
     }
 
     footer {
@@ -76,101 +92,144 @@
       opacity: 0.7;
     }
 
+    /* Floating WA */
+    .wa-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      z-index: 9999;
+      transition: transform 0.2s ease;
+    }
+
+    .wa-float:hover {
+      transform: scale(1.08);
+    }
+
     @media (max-width: 600px) {
       header h1 {
-        font-size: 28px;
+        font-size: 26px;
       }
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
 
-    <header>
-      <h1>Selamat Datang di 3iNetworks</h1>
-      <p>Berasuransi • Berinvestasi • Berbisnis</p>
-    </header>
+<div class="container">
 
-    <div class="section">
-      <h2>🔍 Sekilas Program</h2>
-      <p>Kenali sistem keuangan yang menggabungkan proteksi, investasi, dan peluang bisnis.</p>
-      <a class="button" href="https://bit.ly/cashtobe-3i" target="_blank">Lihat Sekilas</a>
-    </div>
+  <header>
+    <h1>Selamat Datang di 3iNetworks</h1>
+    <p>Berasuransi • Berinvestasi • Berbisnis</p>
+  </header>
 
-    <div class="section">
-      <h2>📌 3 Pilar Utama</h2>
-      <ul>
-        <li>Profil Perusahaan – <a href="https://bit.ly/PP-cashtobe" target="_blank">Pelajari</a></li>
-        <li>Produk & Manfaat – <a href="https://bit.ly/PM-cashtobe" target="_blank">Pelajari</a></li>
-        <li>Marketing Plan – <a href="https://bit.ly/MP-cashtobe" target="_blank">Pelajari</a></li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>🏛️ 1 Pondasi</h2>
-      <p>Hak & Kewajiban Nasabah</p>
-      <a class="button" href="https://bit.ly/cashtobe-pondasi" target="_blank">Pelajari Pondasi</a>
-    </div>
-
-    <div class="section">
-      <h2>🚀 Langkah Berbisnis</h2>
-      <a class="button" href="https://bit.ly/cashtobe-LB" target="_blank">Mulai Bisnis</a>
-    </div>
-
-    <div class="section">
-      <h2>📚 Fasilitas Pendukung</h2>
-      <ul>
-        <li>Laman Pembelajaran – <a href="https://bit.ly/web-cashtobe" target="_blank">Akses</a></li>
-        <li>Laman Promosi – <a href="https://bit.ly/cashtobe-site" target="_blank">Akses</a></li>
-      </ul>
-    </div>
-
-    <footer>
-      © 2026 | #3iReborn #3iNetworks #CashTobe
-    </footer>
-
+  <div class="section">
+    <h2>🔍 Sekilas Program</h2>
+    <p>Program keuangan yang menggabungkan proteksi, investasi, dan peluang bisnis.</p>
+    <a class="button" href="https://bit.ly/cashtobe-3i" target="_blank">Lihat Sekilas</a>
   </div>
-  <!-- Floating WhatsApp Button -->
-<a href="https://wa.me/6285218453131?text=Halo%20saya%20datang%20dari%20LP%203iReborn%20(CashTobe%20Unity).%20Saya%20ingin%20tanya%20lebih%20lanjut."
-   class="wa-float"
-   target="_blank"
-   aria-label="Chat WhatsApp">
 
-  <svg viewBox="0 0 32 32" width="28" height="28" fill="white" aria-hidden="true">
-    <path d="M16 2.9c-7.2 0-13.1 5.8-13.1 13 0 2.3.6 4.6 1.8 6.6L2.9 29l6.8-1.8c1.9 1 4.1 1.6 6.3 1.6 7.2 0 13.1-5.8 13.1-13S23.2 2.9 16 2.9zm0 23.7c-2 0-4-.6-5.7-1.7l-.4-.2-4 1.1 1.1-3.9-.3-.4c-1.2-1.8-1.8-3.9-1.8-6.1 0-6.2 5-11.2 11.2-11.2s11.2 5 11.2 11.2-5 11.2-11.2 11.2zm6.2-8.4c-.3-.2-1.7-.8-2-1s-.5-.2-.7.2-.8 1-.9 1.2-.4.3-.7.1c-.3-.2-1.2-.4-2.3-1.4-.8-.7-1.3-1.6-1.5-1.9-.2-.3 0-.5.1-.7.1-.1.3-.4.4-.6.1-.2.2-.4.3-.6.1-.2 0-.4 0-.6 0-.2-.7-1.7-.9-2.3-.3-.6-.6-.5-.8-.5h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.2 3.4 1.4 3.6c.2.2 2.4 3.7 5.9 5 .8.3 1.4.5 1.9.6.8.2 1.6.2 2.2.1.7-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.1-1.4-.1-.2-.3-.2-.6-.4z"/>
+  <div class="section">
+    <h2>📌 3 Pilar Utama</h2>
+    <ul>
+      <li>Profil Perusahaan – <a href="https://bit.ly/PP-cashtobe" target="_blank">Pelajari</a></li>
+      <li>Produk & Manfaat – <a href="https://bit.ly/PM-cashtobe" target="_blank">Pelajari</a></li>
+      <li>Marketing Plan – <a href="https://bit.ly/MP-cashtobe" target="_blank">Pelajari</a></li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>🏛️ 1 Pondasi</h2>
+    <p>Hak & Kewajiban Nasabah</p>
+    <a class="button" href="https://bit.ly/cashtobe-pondasi" target="_blank">Pelajari Pondasi</a>
+  </div>
+
+  <div class="section">
+    <h2>🚀 Langkah Berbisnis</h2>
+    <a class="button" href="https://bit.ly/cashtobe-LB" target="_blank">Mulai Bisnis</a>
+  </div>
+
+  <!-- AMBIL LINK -->
+  <div class="section" id="ambil-link" style="text-align:center;">
+    <h2>🔗 Ambil Linknya</h2>
+    <p>Isi data di bawah ini untuk mendapatkan link referensi kamu</p>
+
+    <input type="text" id="usernameInput" placeholder="Username (contoh: andi)">
+    <input type="tel" id="waInput" placeholder="Nomor WhatsApp (628xxxx)">
+
+    <br>
+    <button class="button" onclick="ambilLink()">Ambil Link Disini</button>
+
+    <p id="hasilLink" style="margin-top:15px;word-break:break-all;"></p>
+
+    <button id="copyBtn" class="button white" style="display:none;" onclick="copyLink()">
+      Copy Link
+    </button>
+  </div>
+
+  <footer>
+    © 2026 | Support System CashTobe Unity<br>
+    #3iReborn #3iNetworks #CashTobe
+  </footer>
+
+</div>
+
+<!-- FLOATING WHATSAPP -->
+<a href="#" class="wa-float wa-link" target="_blank" aria-label="Chat WhatsApp">
+  <svg viewBox="0 0 32 32" width="28" height="28" fill="white">
+    <path d="M16 2.9c-7.2 0-13.1 5.8-13.1 13 0 2.3.6 4.6 1.8 6.6L2.9 29l6.8-1.8c1.9 1 4.1 1.6 6.3 1.6 7.2 0 13.1-5.8 13.1-13S23.2 2.9 16 2.9z"/>
   </svg>
-
 </a>
 
-<style>
-.wa-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #25D366;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  z-index: 9999;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+<!-- SCRIPT -->
+<script>
+  // === AMBIL LINK ===
+  let finalLink = "";
 
-.wa-float:hover {
-  transform: scale(1.08);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
-}
+  function ambilLink() {
+    const username = document.getElementById("usernameInput").value
+      .toLowerCase().replace(/\s+/g, "");
+    const wa = document.getElementById("waInput").value.replace(/\D/g, "");
 
-@media (max-width: 480px) {
-  .wa-float {
-    bottom: 16px;
-    right: 16px;
+    if (!username || !wa) {
+      alert("Username dan Nomor WhatsApp wajib diisi 🙏");
+      return;
+    }
+
+    const baseURL = "https://3ireborn.github.io/cashtobe/";
+    finalLink = `${baseURL}?ref=${username}&wa=${wa}`;
+
+    document.getElementById("hasilLink").innerHTML =
+      "Link referensi kamu:<br><strong>" + finalLink + "</strong>";
+    document.getElementById("copyBtn").style.display = "inline-block";
   }
-}
-</style>
+
+  function copyLink() {
+    navigator.clipboard.writeText(finalLink);
+    alert("Link berhasil disalin 👍");
+  }
+
+  // === WA REDIRECT ===
+  const params = new URLSearchParams(window.location.search);
+  const waParam = params.get("wa");
+
+  const defaultWA = "628XXXXXXXXXX"; // GANTI nomor leader/admin
+  const waNumber = waParam || defaultWA;
+
+  const message = encodeURIComponent(
+    "Halo, saya dapat info 3iNetworks dari LP CashTobe Unity. Saya ingin tanya lebih lanjut."
+  );
+
+  const waLink = `https://wa.me/${waNumber}?text=${message}`;
+  document.querySelectorAll(".wa-link").forEach(el => el.href = waLink);
+</script>
+
 </body>
 </html>
