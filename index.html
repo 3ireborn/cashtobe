@@ -42,9 +42,9 @@ a{color:#f5e08e}
   font-weight:700;
   border-radius:30px;
   border:none;
-  margin-top:10px
+  margin-top:10px;
+  cursor:pointer
 }
-
 .button.white{background:#fff;color:#06241b}
 
 input{
@@ -126,6 +126,7 @@ footer{text-align:center;font-size:14px;opacity:.7;margin-top:40px}
 <p id="hasil" style="word-break:break-all;margin-top:15px"></p>
 
 <button id="copyBtn" class="button white" style="display:none" onclick="copyLink()">Copy Link</button>
+<button id="shareBtn" class="button" style="display:none;margin-left:6px" onclick="shareToWA()">Share ke WhatsApp</button>
 </div>
 
 <footer>
@@ -135,7 +136,7 @@ footer{text-align:center;font-size:14px;opacity:.7;margin-top:40px}
 
 </div>
 
-<!-- FLOATING WA -->
+<!-- FLOATING WHATSAPP -->
 <a href="#" class="wa-float wa-link" target="_blank">
 <svg viewBox="0 0 32 32" width="28" height="28" fill="white">
 <path d="M16 2.9c-7.2 0-13.1 5.8-13.1 13 0 2.3.6 4.6 1.8 6.6L2.9 29l6.8-1.8c1.9 1 4.1 1.6 6.3 1.6 7.2 0 13.1-5.8 13.1-13S23.2 2.9 16 2.9z"/>
@@ -153,17 +154,29 @@ function ambilLink(){
   document.getElementById("hasil").innerHTML=
     "Link referensi kamu:<br><strong>"+finalLink+"</strong>";
   document.getElementById("copyBtn").style.display="inline-block";
+  document.getElementById("shareBtn").style.display="inline-block";
 }
 function copyLink(){
   navigator.clipboard.writeText(finalLink);
   alert("Link berhasil disalin 👍");
 }
 
-/* ===== WA REDIRECT (FIX FOTO 1) ===== */
+/* ===== SHARE KE WHATSAPP ===== */
+function shareToWA(){
+  if(!finalLink){alert("Link belum tersedia 🙏");return;}
+  const text=encodeURIComponent(
+    "Halo 🙏\nAku share info awal 3iNetworks ya.\n\n"+
+    finalLink+
+    "\n\nSilakan dilihat dulu. Kalau mau tanya, tinggal klik tombol WA di halaman itu 😊"
+  );
+  window.open("https://wa.me/?text="+text,"_blank");
+}
+
+/* ===== WA REDIRECT (MASTER ➜ LEADER | REF ➜ MITRA) ===== */
 const p=new URLSearchParams(window.location.search);
 const waParam=p.get("wa");
 
-/* GANTI NOMOR INI JIKA PERLU (WA LEADER) */
+/* 👉 NOMOR WA KAMU (LEADER) */
 const defaultWA="6285218453131";
 
 const waNumber=(waParam&&waParam.length>8)?waParam:defaultWA;
