@@ -1,234 +1,177 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>3iNetworks | CashTobe Unity</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3iNetworks | CashTobe Unity</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background: linear-gradient(180deg, #0f3d2e, #06241b);
-      color: #ffffff;
-    }
+<style>
+body{
+  margin:0;
+  font-family:Segoe UI,Tahoma,sans-serif;
+  background:linear-gradient(180deg,#0f3d2e,#06241b);
+  color:#fff
+}
+.container{
+  max-width:960px;
+  margin:auto;
+  padding:40px 20px
+}
+header{text-align:center;margin-bottom:40px}
+header h1{color:#d4af37;font-size:32px;margin-bottom:8px}
+header p{opacity:.9}
 
-    .container {
-      max-width: 960px;
-      margin: auto;
-      padding: 40px 20px;
-    }
+.section{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(212,175,55,.25);
+  border-radius:14px;
+  padding:26px;
+  margin-bottom:26px
+}
+.section h2{color:#d4af37;margin-bottom:14px}
 
-    header {
-      text-align: center;
-      margin-bottom: 40px;
-    }
+ul{padding-left:20px;line-height:1.8}
+a{color:#f5e08e}
 
-    header h1 {
-      font-size: 34px;
-      color: #d4af37;
-      margin-bottom: 10px;
-    }
+.button{
+  display:inline-block;
+  padding:12px 26px;
+  background:linear-gradient(90deg,#d4af37,#f5e08e);
+  color:#06241b;
+  text-decoration:none;
+  font-weight:700;
+  border-radius:30px;
+  border:none;
+  margin-top:10px
+}
 
-    header p {
-      font-size: 18px;
-      opacity: 0.9;
-    }
+.button.white{background:#fff;color:#06241b}
 
-    .section {
-      background: rgba(255,255,255,0.06);
-      border-radius: 14px;
-      padding: 28px;
-      margin-bottom: 26px;
-      border: 1px solid rgba(212,175,55,0.25);
-    }
+input{
+  width:80%;
+  max-width:320px;
+  padding:12px;
+  border:none;
+  border-radius:8px;
+  margin-bottom:12px;
+  text-align:center
+}
 
-    .section h2 {
-      color: #d4af37;
-      margin-bottom: 14px;
-      font-size: 22px;
-    }
+footer{text-align:center;font-size:14px;opacity:.7;margin-top:40px}
 
-    ul {
-      padding-left: 20px;
-      line-height: 1.8;
-    }
-
-    a {
-      color: #f5e08e;
-    }
-
-    .button {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 12px 26px;
-      background: linear-gradient(90deg, #d4af37, #f5e08e);
-      color: #06241b;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 30px;
-      border: none;
-    }
-
-    .button.white {
-      background: #ffffff;
-      color: #06241b;
-    }
-
-    input {
-      padding: 12px;
-      width: 80%;
-      max-width: 320px;
-      border-radius: 8px;
-      border: none;
-      margin-bottom: 12px;
-      text-align: center;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      font-size: 14px;
-      opacity: 0.7;
-    }
-
-    /* Floating WA */
-    .wa-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      z-index: 9999;
-      transition: transform 0.2s ease;
-    }
-
-    .wa-float:hover {
-      transform: scale(1.08);
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 26px;
-      }
-    }
-  </style>
+/* Floating WA */
+.wa-float{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  width:56px;
+  height:56px;
+  background:#25D366;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 4px 12px rgba(0,0,0,.3);
+  z-index:9999
+}
+</style>
 </head>
 
 <body>
 
 <div class="container">
 
-  <header>
-    <h1>Selamat Datang di 3iNetworks</h1>
-    <p>Berasuransi • Berinvestasi • Berbisnis</p>
-  </header>
+<header>
+<h1>Selamat Datang di 3iNetworks</h1>
+<p>Berasuransi • Berinvestasi • Berbisnis</p>
+</header>
 
-  <div class="section">
-    <h2>🔍 Sekilas Program</h2>
-    <p>Program keuangan yang menggabungkan proteksi, investasi, dan peluang bisnis.</p>
-    <a class="button" href="https://bit.ly/cashtobe-3i" target="_blank">Lihat Sekilas</a>
-  </div>
+<div class="section">
+<h2>🔍 Sekilas Program</h2>
+<p>Program keuangan yang menggabungkan proteksi, investasi, dan peluang bisnis.</p>
+<a class="button" href="https://bit.ly/cashtobe-3i" target="_blank">Lihat Sekilas</a>
+</div>
 
-  <div class="section">
-    <h2>📌 3 Pilar Utama</h2>
-    <ul>
-      <li>Profil Perusahaan – <a href="https://bit.ly/PP-cashtobe" target="_blank">Pelajari</a></li>
-      <li>Produk & Manfaat – <a href="https://bit.ly/PM-cashtobe" target="_blank">Pelajari</a></li>
-      <li>Marketing Plan – <a href="https://bit.ly/MP-cashtobe" target="_blank">Pelajari</a></li>
-    </ul>
-  </div>
+<div class="section">
+<h2>📌 3 Pilar Utama</h2>
+<ul>
+<li>Profil Perusahaan – <a href="https://bit.ly/PP-cashtobe" target="_blank">Pelajari</a></li>
+<li>Produk & Manfaat – <a href="https://bit.ly/PM-cashtobe" target="_blank">Pelajari</a></li>
+<li>Marketing Plan – <a href="https://bit.ly/MP-cashtobe" target="_blank">Pelajari</a></li>
+</ul>
+</div>
 
-  <div class="section">
-    <h2>🏛️ 1 Pondasi</h2>
-    <p>Hak & Kewajiban Nasabah</p>
-    <a class="button" href="https://bit.ly/cashtobe-pondasi" target="_blank">Pelajari Pondasi</a>
-  </div>
+<div class="section">
+<h2>🏛️ 1 Pondasi</h2>
+<p>Hak & Kewajiban Nasabah</p>
+<a class="button" href="https://bit.ly/cashtobe-pondasi" target="_blank">Pelajari Pondasi</a>
+</div>
 
-  <div class="section">
-    <h2>🚀 Langkah Berbisnis</h2>
-    <a class="button" href="https://bit.ly/cashtobe-LB" target="_blank">Mulai Bisnis</a>
-  </div>
+<div class="section">
+<h2>🚀 Langkah Berbisnis</h2>
+<a class="button" href="https://bit.ly/cashtobe-LB" target="_blank">Mulai Bisnis</a>
+</div>
 
-  <!-- AMBIL LINK -->
-  <div class="section" id="ambil-link" style="text-align:center;">
-    <h2>🔗 Ambil Linknya</h2>
-    <p>Isi data di bawah ini untuk mendapatkan link referensi kamu</p>
+<!-- AMBIL LINK -->
+<div class="section" style="text-align:center">
+<h2>🔗 Ambil Linknya</h2>
+<p>Isi data di bawah ini untuk mendapatkan link referensi kamu</p>
 
-    <input type="text" id="usernameInput" placeholder="Username (contoh: andi)">
-    <input type="tel" id="waInput" placeholder="Nomor WhatsApp (628xxxx)">
+<input id="username" placeholder="Username (contoh: andi)">
+<input id="wa" placeholder="Nomor WhatsApp (628xxxx)">
 
-    <br>
-    <button class="button" onclick="ambilLink()">Ambil Link Disini</button>
+<br>
+<button class="button" onclick="ambilLink()">Ambil Link Disini</button>
 
-    <p id="hasilLink" style="margin-top:15px;word-break:break-all;"></p>
+<p id="hasil" style="word-break:break-all;margin-top:15px"></p>
 
-    <button id="copyBtn" class="button white" style="display:none;" onclick="copyLink()">
-      Copy Link
-    </button>
-  </div>
+<button id="copyBtn" class="button white" style="display:none" onclick="copyLink()">Copy Link</button>
+</div>
 
-  <footer>
-    © 2026 | Support System CashTobe Unity<br>
-    #3iReborn #3iNetworks #CashTobe
-  </footer>
+<footer>
+© 2026 | Support System CashTobe Unity<br>
+#3iReborn #3iNetworks #CashTobe
+</footer>
 
 </div>
 
-<!-- FLOATING WHATSAPP -->
-<a href="#" class="wa-float wa-link" target="_blank" aria-label="Chat WhatsApp">
-  <svg viewBox="0 0 32 32" width="28" height="28" fill="white">
-    <path d="M16 2.9c-7.2 0-13.1 5.8-13.1 13 0 2.3.6 4.6 1.8 6.6L2.9 29l6.8-1.8c1.9 1 4.1 1.6 6.3 1.6 7.2 0 13.1-5.8 13.1-13S23.2 2.9 16 2.9z"/>
-  </svg>
+<!-- FLOATING WA -->
+<a href="#" class="wa-float wa-link" target="_blank">
+<svg viewBox="0 0 32 32" width="28" height="28" fill="white">
+<path d="M16 2.9c-7.2 0-13.1 5.8-13.1 13 0 2.3.6 4.6 1.8 6.6L2.9 29l6.8-1.8c1.9 1 4.1 1.6 6.3 1.6 7.2 0 13.1-5.8 13.1-13S23.2 2.9 16 2.9z"/>
+</svg>
 </a>
 
-<!-- SCRIPT -->
 <script>
-  // === AMBIL LINK ===
-  let finalLink = "";
+/* ===== AMBIL LINK ===== */
+let finalLink="";
+function ambilLink(){
+  const u=document.getElementById("username").value.toLowerCase().replace(/\s+/g,"");
+  const w=document.getElementById("wa").value.replace(/\D/g,"");
+  if(!u||!w){alert("Username & WA wajib diisi 🙏");return;}
+  finalLink=`https://3ireborn.github.io/cashtobe/?ref=${u}&wa=${w}`;
+  document.getElementById("hasil").innerHTML=
+    "Link referensi kamu:<br><strong>"+finalLink+"</strong>";
+  document.getElementById("copyBtn").style.display="inline-block";
+}
+function copyLink(){
+  navigator.clipboard.writeText(finalLink);
+  alert("Link berhasil disalin 👍");
+}
 
-  function ambilLink() {
-    const username = document.getElementById("usernameInput").value
-      .toLowerCase().replace(/\s+/g, "");
-    const wa = document.getElementById("waInput").value.replace(/\D/g, "");
+/* ===== WA REDIRECT (FIX FOTO 1) ===== */
+const p=new URLSearchParams(window.location.search);
+const waParam=p.get("wa");
 
-    if (!username || !wa) {
-      alert("Username dan Nomor WhatsApp wajib diisi 🙏");
-      return;
-    }
+/* GANTI NOMOR INI JIKA PERLU (WA LEADER) */
+const defaultWA="6285218453131";
 
-    const baseURL = "https://3ireborn.github.io/cashtobe/";
-    finalLink = `${baseURL}?ref=${username}&wa=${wa}`;
-
-    document.getElementById("hasilLink").innerHTML =
-      "Link referensi kamu:<br><strong>" + finalLink + "</strong>";
-    document.getElementById("copyBtn").style.display = "inline-block";
-  }
-
-  function copyLink() {
-    navigator.clipboard.writeText(finalLink);
-    alert("Link berhasil disalin 👍");
-  }
-
-  // === WA REDIRECT ===
-  const params = new URLSearchParams(window.location.search);
-  const waParam = params.get("wa");
-
-  const defaultWA = "628XXXXXXXXXX"; // GANTI nomor leader/admin
-  const waNumber = waParam || defaultWA;
-
-  const message = encodeURIComponent(
-    "Halo, saya dapat info 3iNetworks dari LP CashTobe Unity. Saya ingin tanya lebih lanjut."
-  );
-
-  const waLink = `https://wa.me/${waNumber}?text=${message}`;
-  document.querySelectorAll(".wa-link").forEach(el => el.href = waLink);
+const waNumber=(waParam&&waParam.length>8)?waParam:defaultWA;
+const msg=encodeURIComponent(
+  "Halo, saya dapat info 3iNetworks dari LP CashTobe Unity. Saya ingin tanya lebih lanjut."
+);
+const waLink=`https://wa.me/${waNumber}?text=${msg}`;
+document.querySelectorAll(".wa-link").forEach(e=>e.href=waLink);
 </script>
 
 </body>
