@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LP Member | CashTobe Unity</title>
+<title>Member Area | CashTobe Unity</title>
 
 <style>
 body{
@@ -62,22 +62,6 @@ footer{
   opacity:.7;
   margin-top:40px
 }
-
-/* Floating WA */
-.wa-float{
-  position:fixed;
-  right:20px;
-  bottom:20px;
-  width:56px;
-  height:56px;
-  background:#25D366;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 4px 12px rgba(0,0,0,.3);
-  z-index:9999
-}
 </style>
 </head>
 
@@ -86,25 +70,25 @@ footer{
 <div class="container">
 
 <header>
-<h1>LP Member 3iNetworks</h1>
-<p>Support System • Referral Rapi • WA Masing-Masing</p>
+<h1>Member Area</h1>
+<p>Ambil Link LP Pribadi Kamu</p>
 </header>
 
 <div class="section">
-<h2>📌 Petunjuk Singkat</h2>
+<h2>📌 Petunjuk</h2>
 <ul>
-<li>Isi <strong>Username</strong> (tanpa spasi)</li>
-<li>Isi <strong>Nomor WhatsApp</strong> kamu</li>
-<li>Klik <strong>Ambil Linknya</strong></li>
-<li>Gunakan link tersebut untuk share ke prospek</li>
+<li>Halaman ini khusus <strong>mitra</strong></li>
+<li>Gunakan untuk <strong>generate link LP pribadi</strong></li>
+<li>Link hasil generate <strong>dibagikan ke prospek</strong></li>
+<li>Prospek <strong>tidak</strong> masuk ke halaman ini</li>
 </ul>
 </div>
 
 <!-- AMBIL LINK -->
 <div class="section" style="text-align:center">
-<h2>🔗 Ambil Linknya</h2>
+<h2>🔗 Ambil Link LP Kamu</h2>
 
-<input id="username" placeholder="Username (contoh: andi)">
+<input id="username" placeholder="Username (tanpa spasi)">
 <input id="wa" placeholder="Nomor WhatsApp (628xxxx)">
 
 <br>
@@ -124,64 +108,60 @@ Share ke WhatsApp
 <div class="section">
 <h2>🔒 Catatan Penting</h2>
 <p>
-Link yang kamu dapatkan ini adalah <strong>LP pribadimu</strong>.  
+Link yang kamu dapatkan ini akan mengarah ke <strong>LP utama</strong>.<br>
 Setiap prospek yang klik tombol WhatsApp di LP tersebut
-akan langsung chat ke <strong>WA kamu</strong>, bukan ke leader atau admin.
+akan langsung chat ke <strong>WA kamu sendiri</strong>.
 </p>
 </div>
 
 <footer>
-© 2026 | LP Member CashTobe Unity<br>
-Khusus Pengguna Template
+© 2026 | Member Area CashTobe Unity<br>
+Khusus Mitra
 </footer>
 
 </div>
 
-<!-- FLOATING WHATSAPP (DARI LINK REFERRAL) -->
-<a href="#" class="wa-float wa-link" target="_blank">
-<svg viewBox="0 0 32 32" width="28" height="28" fill="white">
-<path d="M16 2.9c-7.2 0-13.1 5.8-13.1 13 0 2.3.6 4.6 1.8 6.6L2.9 29l6.8-1.8c1.9 1 4.1 1.6 6.3 1.6 7.2 0 13.1-5.8 13.1-13S23.2 2.9 16 2.9z"/>
-</svg>
-</a>
-
 <script>
-/* ===== AMBIL LINK ===== */
+/* ===== GENERATE LINK (KE INDEX.HTML) ===== */
 let finalLink="";
+
 function ambilLink(){
-  const u=document.getElementById("username").value.toLowerCase().replace(/\s+/g,"");
+  const u=document.getElementById("username").value
+    .toLowerCase().replace(/\s+/g,"");
   const w=document.getElementById("wa").value.replace(/\D/g,"");
-  if(!u||!w){alert("Username & WA wajib diisi 🙏");return;}
-  finalLink=`https://3ireborn.github.io/cashtobe/member.html?ref=${u}&wa=${w}`;
+
+  if(!u || !w){
+    alert("Username dan Nomor WA wajib diisi 🙏");
+    return;
+  }
+
+  finalLink=`https://3ireborn.github.io/cashtobe/?ref=${u}&wa=${w}`;
+
   document.getElementById("hasil").innerHTML=
     "Link LP kamu:<br><strong>"+finalLink+"</strong>";
+
   document.getElementById("copyBtn").style.display="inline-block";
   document.getElementById("shareBtn").style.display="inline-block";
 }
+
 function copyLink(){
   navigator.clipboard.writeText(finalLink);
   alert("Link berhasil disalin 👍");
 }
 
-/* ===== SHARE KE WA ===== */
 function shareToWA(){
-  if(!finalLink){alert("Link belum tersedia 🙏");return;}
+  if(!finalLink){
+    alert("Link belum tersedia 🙏");
+    return;
+  }
+
   const text=encodeURIComponent(
     "Halo 🙏\nAku share info 3iNetworks ya.\n\n"+
     finalLink+
     "\n\nSilakan dilihat dulu. Kalau mau tanya, klik tombol WA di halaman itu 😊"
   );
-  window.open("https://wa.me/?text="+text,"_blank");
-}
 
-/* ===== WA REDIRECT (REFERRAL) ===== */
-const p=new URLSearchParams(window.location.search);
-const waParam=p.get("wa");
-if(waParam){
-  const msg=encodeURIComponent(
-    "Halo, saya lihat info 3iNetworks dari LP kamu. Saya ingin tanya lebih lanjut."
-  );
-  const waLink=`https://wa.me/${waParam}?text=${msg}`;
-  document.querySelectorAll(".wa-link").forEach(e=>e.href=waLink);
+  window.open("https://wa.me/?text="+text,"_blank");
 }
 </script>
 
