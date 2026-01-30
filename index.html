@@ -31,6 +31,7 @@ header p{opacity:.9}
 .section h2{color:#d4af37;margin-bottom:14px}
 
 ul{padding-left:20px;line-height:1.8}
+a{color:#f5e08e}
 
 .button{
   display:inline-block;
@@ -86,35 +87,53 @@ footer{
 <strong>proteksi, investasi, dan peluang bisnis</strong>
 dalam satu sistem.
 </p>
+<a class="button" href="https://bit.ly/cashtobe-3i" target="_blank">
+Lihat Sekilas
+</a>
 </div>
 
 <div class="section">
 <h2>📌 3 Pilar Utama</h2>
 <ul>
-<li>Profil Perusahaan</li>
-<li>Produk & Manfaat</li>
-<li>Marketing Plan</li>
+<li>Profil Perusahaan – <a href="https://bit.ly/PP-cashtobe" target="_blank">Pelajari</a></li>
+<li>Produk & Manfaat – <a href="https://bit.ly/PM-cashtobe" target="_blank">Pelajari</a></li>
+<li>Marketing Plan – <a href="https://bit.ly/MP-cashtobe" target="_blank">Pelajari</a></li>
 </ul>
 </div>
 
 <div class="section">
 <h2>🏛️ 1 Pondasi</h2>
 <p>Hak & Kewajiban Nasabah</p>
+<a class="button" href="https://bit.ly/cashtobe-pondasi" target="_blank">
+Pelajari Pondasi
+</a>
 </div>
 
-<!-- AMBIL LINK (AKAN DI-HIDE OTOMATIS JIKA ADA ?ref=) -->
-<div class="section" id="ambil-link" style="text-align:center">
-<h2>🔗 Ambil Linknya</h2>
-<p>Fitur ini hanya untuk mitra</p>
+<div class="section">
+<h2>🚀 Langkah Berbisnis</h2>
+<a class="button" href="https://bit.ly/cashtobe-LB" target="_blank">
+Mulai Bisnis
+</a>
+</div>
 
-<a class="button" href="offer.html">
-Pelajari Cara Punya LP Pribadi
+<div class="section">
+<h2>📚 Support System</h2>
+<p>
+Untuk membantu proses belajar dan pemahaman program,
+kami menyediakan Support System CashTobe Unity.
+</p>
+<a class="button" href="https://bit.ly/web-cashtobe" target="_blank">
+Laman Pembelajaran
+</a>
+<br><br>
+<a class="button" href="https://bit.ly/cashtobe-site" target="_blank">
+Laman Promosi
 </a>
 </div>
 
 <footer>
-© 2026 | CashTobe Unity<br>
-#3iReborn #3iNetworks
+© 2026 | Support System CashTobe Unity<br>
+#3iReborn #3iNetworks #CashTobe
 </footer>
 
 </div>
@@ -127,25 +146,17 @@ Pelajari Cara Punya LP Pribadi
 </a>
 
 <script>
-/* ===== AUTO-HIDE AMBIL LINK JIKA DARI REFERRAL ===== */
-const params = new URLSearchParams(window.location.search);
-if (params.get("ref")) {
-  const ambilLink = document.getElementById("ambil-link");
-  if (ambilLink) ambilLink.style.display = "none";
-}
-
 /* ===== WA REDIRECT ===== */
+const params = new URLSearchParams(window.location.search);
 const waParam = params.get("wa");
 
-/* DEFAULT WA (JIKA TANPA REFERRAL – DEMO/SALES) */
-const defaultWA = "6285218453131"; // ganti dengan WA kamu
+/* DEFAULT WA (LEADER / ADMIN) */
+const defaultWA = "6285218453131"; // ganti kalau perlu
 
 const waNumber = waParam ? waParam : defaultWA;
-
 const msg = encodeURIComponent(
   "Halo, saya ingin tahu lebih lanjut tentang 3iNetworks."
 );
-
 const waLink = `https://wa.me/${waNumber}?text=${msg}`;
 document.querySelectorAll(".wa-link").forEach(e => e.href = waLink);
 </script>
