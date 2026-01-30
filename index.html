@@ -18,7 +18,7 @@ body{
   padding:40px 20px
 }
 header{text-align:center;margin-bottom:40px}
-header h1{color:#d4af37;font-size:32px;margin-bottom:8px}
+header h1{color:#d4af37;font-size:32px;margin-bottom:10px}
 header p{opacity:.9}
 
 .section{
@@ -31,7 +31,6 @@ header p{opacity:.9}
 .section h2{color:#d4af37;margin-bottom:14px}
 
 ul{padding-left:20px;line-height:1.8}
-a{color:#f5e08e}
 
 .button{
   display:inline-block;
@@ -45,19 +44,13 @@ a{color:#f5e08e}
   margin-top:10px;
   cursor:pointer
 }
-.button.white{background:#fff;color:#06241b}
 
-input{
-  width:80%;
-  max-width:320px;
-  padding:12px;
-  border:none;
-  border-radius:8px;
-  margin-bottom:12px;
-  text-align:center
+footer{
+  text-align:center;
+  font-size:14px;
+  opacity:.7;
+  margin-top:40px
 }
-
-footer{text-align:center;font-size:14px;opacity:.7;margin-top:40px}
 
 /* Floating WA */
 .wa-float{
@@ -88,103 +81,73 @@ footer{text-align:center;font-size:14px;opacity:.7;margin-top:40px}
 
 <div class="section">
 <h2>🔍 Sekilas Program</h2>
-<p>Program keuangan yang menggabungkan proteksi, investasi, dan peluang bisnis.</p>
-<a class="button" href="https://bit.ly/cashtobe-3i" target="_blank">Lihat Sekilas</a>
+<p>
+3iNetworks adalah program yang menggabungkan
+<strong>proteksi, investasi, dan peluang bisnis</strong>
+dalam satu sistem.
+</p>
 </div>
 
 <div class="section">
 <h2>📌 3 Pilar Utama</h2>
 <ul>
-<li>Profil Perusahaan – <a href="https://bit.ly/PP-cashtobe" target="_blank">Pelajari</a></li>
-<li>Produk & Manfaat – <a href="https://bit.ly/PM-cashtobe" target="_blank">Pelajari</a></li>
-<li>Marketing Plan – <a href="https://bit.ly/MP-cashtobe" target="_blank">Pelajari</a></li>
+<li>Profil Perusahaan</li>
+<li>Produk & Manfaat</li>
+<li>Marketing Plan</li>
 </ul>
 </div>
 
 <div class="section">
 <h2>🏛️ 1 Pondasi</h2>
 <p>Hak & Kewajiban Nasabah</p>
-<a class="button" href="https://bit.ly/cashtobe-pondasi" target="_blank">Pelajari Pondasi</a>
 </div>
 
-<div class="section">
-<h2>🚀 Langkah Berbisnis</h2>
-<a class="button" href="https://bit.ly/cashtobe-LB" target="_blank">Mulai Bisnis</a>
-</div>
-
-<!-- AMBIL LINK -->
-<div class="section" style="text-align:center">
+<!-- AMBIL LINK (AKAN DI-HIDE OTOMATIS JIKA ADA ?ref=) -->
+<div class="section" id="ambil-link" style="text-align:center">
 <h2>🔗 Ambil Linknya</h2>
-<p>Isi data di bawah ini untuk mendapatkan link referensi kamu</p>
+<p>Fitur ini hanya untuk mitra</p>
 
-<input id="username" placeholder="Username (contoh: andi)">
-<input id="wa" placeholder="Nomor WhatsApp (628xxxx)">
-
-<br>
-<button class="button" onclick="ambilLink()">Ambil Link Disini</button>
-
-<p id="hasil" style="word-break:break-all;margin-top:15px"></p>
-
-<button id="copyBtn" class="button white" style="display:none" onclick="copyLink()">Copy Link</button>
-<button id="shareBtn" class="button" style="display:none;margin-left:6px" onclick="shareToWA()">Share ke WhatsApp</button>
+<a class="button" href="offer.html">
+Pelajari Cara Punya LP Pribadi
+</a>
 </div>
 
 <footer>
-© 2026 | Support System CashTobe Unity<br>
-#3iReborn #3iNetworks #CashTobe
+© 2026 | CashTobe Unity<br>
+#3iReborn #3iNetworks
 </footer>
 
 </div>
 
 <!-- FLOATING WHATSAPP -->
-<a href="#" class="wa-float wa-link" target="_blank">
+<a href="#" class="wa-float wa-link" target="_blank" aria-label="Chat WhatsApp">
 <svg viewBox="0 0 32 32" width="28" height="28" fill="white">
 <path d="M16 2.9c-7.2 0-13.1 5.8-13.1 13 0 2.3.6 4.6 1.8 6.6L2.9 29l6.8-1.8c1.9 1 4.1 1.6 6.3 1.6 7.2 0 13.1-5.8 13.1-13S23.2 2.9 16 2.9z"/>
 </svg>
 </a>
 
 <script>
-/* ===== AMBIL LINK ===== */
-let finalLink="";
-function ambilLink(){
-  const u=document.getElementById("username").value.toLowerCase().replace(/\s+/g,"");
-  const w=document.getElementById("wa").value.replace(/\D/g,"");
-  if(!u||!w){alert("Username & WA wajib diisi 🙏");return;}
-  finalLink=`https://3ireborn.github.io/cashtobe/?ref=${u}&wa=${w}`;
-  document.getElementById("hasil").innerHTML=
-    "Link referensi kamu:<br><strong>"+finalLink+"</strong>";
-  document.getElementById("copyBtn").style.display="inline-block";
-  document.getElementById("shareBtn").style.display="inline-block";
-}
-function copyLink(){
-  navigator.clipboard.writeText(finalLink);
-  alert("Link berhasil disalin 👍");
+/* ===== AUTO-HIDE AMBIL LINK JIKA DARI REFERRAL ===== */
+const params = new URLSearchParams(window.location.search);
+if (params.get("ref")) {
+  const ambilLink = document.getElementById("ambil-link");
+  if (ambilLink) ambilLink.style.display = "none";
 }
 
-/* ===== SHARE KE WHATSAPP ===== */
-function shareToWA(){
-  if(!finalLink){alert("Link belum tersedia 🙏");return;}
-  const text=encodeURIComponent(
-    "Halo 🙏\nAku share info awal 3iNetworks ya.\n\n"+
-    finalLink+
-    "\n\nSilakan dilihat dulu. Kalau mau tanya, tinggal klik tombol WA di halaman itu 😊"
-  );
-  window.open("https://wa.me/?text="+text,"_blank");
-}
+/* ===== WA REDIRECT ===== */
+const waParam = params.get("wa");
 
-/* ===== WA REDIRECT (MASTER ➜ LEADER | REF ➜ MITRA) ===== */
-const p=new URLSearchParams(window.location.search);
-const waParam=p.get("wa");
+/* DEFAULT WA (JIKA TANPA REFERRAL – DEMO/SALES) */
+const defaultWA = "6285218453131"; // ganti dengan WA kamu
 
-/* 👉 NOMOR WA KAMU (LEADER) */
-const defaultWA="6285218453131";
+const waNumber = waParam ? waParam : defaultWA;
 
-const waNumber=(waParam&&waParam.length>8)?waParam:defaultWA;
-const msg=encodeURIComponent(
-  "Halo, saya dapat info 3iNetworks dari LP CashTobe Unity. Saya ingin tanya lebih lanjut."
+const msg = encodeURIComponent(
+  "Halo, saya ingin tahu lebih lanjut tentang 3iNetworks."
 );
-const waLink=`https://wa.me/${waNumber}?text=${msg}`;
-document.querySelectorAll(".wa-link").forEach(e=>e.href=waLink);
+
+const waLink = `https://wa.me/${waNumber}?text=${msg}`;
+document.querySelectorAll(".wa-link").forEach(e => e.href = waLink);
 </script>
 
 </body>
