@@ -17,9 +17,16 @@ body{
   margin:auto;
   padding:40px 20px
 }
-header{text-align:center;margin-bottom:40px}
-header h1{color:#d4af37;font-size:32px;margin-bottom:10px}
+header{text-align:center;margin-bottom:20px}
+header h1{color:#d4af37;font-size:32px;margin-bottom:8px}
 header p{opacity:.9}
+
+.presenter{
+  text-align:center;
+  font-size:16px;
+  opacity:.9;
+  margin-bottom:30px
+}
 
 .section{
   background:rgba(255,255,255,.06);
@@ -53,6 +60,11 @@ footer{
   margin-top:40px
 }
 
+/* Zoom */
+.zoom-box{text-align:center}
+.zoom-icon{font-size:40px}
+.countdown{font-size:20px;font-weight:700;color:#f5e08e;margin-top:10px}
+
 /* Floating WA */
 .wa-float{
   position:fixed;
@@ -79,6 +91,12 @@ footer{
 <h1>Selamat Datang di 3iNetworks</h1>
 <p>Berasuransi • Berinvestasi • Berbisnis</p>
 </header>
+
+<div class="presenter">
+<strong>Bisnis 3IReborn</strong><br>
+Dipresentasikan oleh:<br>
+<strong id="presenterName">Tim 3IReborn</strong>
+</div>
 
 <div class="section">
 <h2>🔍 Sekilas Program</h2>
@@ -117,11 +135,7 @@ Mulai Bisnis
 </div>
 
 <div class="section">
-<h2>📚 Support System</h2>
-<p>
-Untuk membantu proses belajar dan pemahaman program,
-kami menyediakan Support System CashTobe Unity.
-</p>
+<h2>📚 Support System CashTobe Unity</h2>
 <a class="button" href="https://bit.ly/web-cashtobe" target="_blank">
 Laman Pembelajaran
 </a>
@@ -129,6 +143,22 @@ Laman Pembelajaran
 <a class="button" href="https://bit.ly/cashtobe-site" target="_blank">
 Laman Promosi
 </a>
+</div>
+
+<!-- ZOOM MEETING -->
+<div class="section zoom-box">
+<div class="zoom-icon">🎥</div>
+<h2>Zoom Meeting 3iLC</h2>
+<p>Meeting terdekat akan dimulai dalam:</p>
+<div id="countdown" class="countdown">Loading...</div>
+
+<p style="margin-top:14px;font-size:14px;opacity:.85">
+Jadwal rutin:<br>
+• Senin 19:00 WIB<br>
+• Rabu 19:00 WIB<br>
+• Rabu (Minggu ke-2 & 4) 14:00 WIB<br>
+• Jum’at 19:00 WIB
+</p>
 </div>
 
 <footer>
@@ -146,19 +176,80 @@ Laman Promosi
 </a>
 
 <script>
-/* ===== WA REDIRECT ===== */
+/* ===== PARAM URL ===== */
 const params = new URLSearchParams(window.location.search);
+
+/* ===== AUTO PRESENTER ===== */
+const ref = params.get("ref");
+if (ref) {
+  const nama = ref
+    .replace(/[-_]/g," ")
+    .replace(/\b\w/g,h=>h.toUpperCase());
+  const el = document.getElementById("presenterName");
+  if (el) el.textContent = nama;
+}
+
+/* ===== WA REDIRECT ===== */
 const waParam = params.get("wa");
-
-/* DEFAULT WA (LEADER / ADMIN) */
 const defaultWA = "6285218453131"; // ganti kalau perlu
-
 const waNumber = waParam ? waParam : defaultWA;
 const msg = encodeURIComponent(
   "Halo, saya ingin tahu lebih lanjut tentang 3iNetworks."
 );
-const waLink = `https://wa.me/${waNumber}?text=${msg}`;
-document.querySelectorAll(".wa-link").forEach(e => e.href = waLink);
+document.querySelectorAll(".wa-link").forEach(e=>{
+  e.href = `https://wa.me/${waNumber}?text=${msg}`;
+});
+
+/* ===== ZOOM COUNTDOWN (WIB) ===== */
+function getNextMeeting(){
+  const now = new Date(
+    new Date().toLocaleString("en-US",{timeZone:"Asia/Jakarta"})
+  );
+  const list=[];
+
+  function add(day,hour){
+    const d=new Date(now);
+    d.setDate(d.getDate()+((day+7-d.getDay())%7));
+    d.setHours(hour,0,0,0);
+    if(d>now) list.push(d);
+  }
+
+  add(1,19); // Senin
+  add(3,19); // Rabu
+  add(5,19); // Jumat
+
+  const week=Math.ceil(now.getDate()/7);
+  if(now.getDay()<=3 && (week===2||week===4)){
+    const d=new Date(now);
+    d.setDate(d.getDate()+((3+7-d.getDay())%7));
+    d.setHours(14,0,0,0);
+    if(d>now) list.push(d);
+  }
+
+  list.sort((a,b)=>a-b);
+  return list[0];
+}
+
+function startCountdown(){
+  const target=getNextMeeting();
+  const el=document.getElementById("countdown");
+
+  setInterval(()=>{
+    const now=new Date(
+      new Date().toLocaleString("en-US",{timeZone:"Asia/Jakarta"})
+    );
+    const diff=target-now;
+    if(diff<=0){
+      el.textContent="Meeting sedang berlangsung 🔴";
+      return;
+    }
+    const h=Math.floor(diff/36e5);
+    const m=Math.floor(diff%36e5/6e4);
+    const s=Math.floor(diff%6e4/1000);
+    el.textContent=`${h} jam ${m} menit ${s} detik`;
+  },1000);
+}
+startCountdown();
 </script>
 
 </body>
